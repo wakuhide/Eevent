@@ -1,0 +1,41 @@
+<div id="menu">
+  <ul>
+  </ul>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <!-- モバイル用 -->
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- ここまで -->
+
+    <!-- PC用 -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "HOME", "/" %>
+        </li>
+        <li>
+          <%= link_to "Eeventの特長", concept_path %>
+        </li>
+        <li>
+          <%= link_to "イベント参加レポート", report_path %>
+        </li>
+        <li>
+          <%= link_to "「参加費なし」の理由", reason_path %>
+        </li>
+        <li>
+          <%= link_to "よくある質問", question_path %>
+        </li>
+      </ul>
+    </div>
+    <!-- ここまで -->
+  </div>
+</nav>

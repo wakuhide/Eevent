@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cached_satisfaction_list: MyString
+  cached_trigger_list: MyString
+  body: MyText
+  template: false
+
+two:
+  cached_satisfaction_list: MyString
+  cached_trigger_list: MyString
+  body: MyText
+  template: false
