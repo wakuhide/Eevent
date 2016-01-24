@@ -2,9 +2,8 @@
    <div class="sectionsection">
       <h2>マイページ</h2>
       <% if user_signed_in? %>
-       <% unless current_user.full_profile? %>
-        <%= link_to "入力されてない箇所があります", edit_user_path %>
-       <% end %>
+ <!--       <% unless current_user.full_profile? %> -->
+       <!-- <% end %> -->
        <ul>
          <li>
          <%= link_to "マイページ", user_path(current_user) %><br />

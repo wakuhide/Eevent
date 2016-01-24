@@ -12,4 +12,16 @@ class EventsController < ApplicationController
   def search
   end
 
+  def create
+  end
+
+  def send_mail
+    @message = params[:message]
+    logger.debug @message
+    SendMailToAdmin.hello('current_user.name').deliver
+    SendMailToUsers.thanks_email('current_user.email').deliver
+    redirect_to root_path
+  end
+
+
 end

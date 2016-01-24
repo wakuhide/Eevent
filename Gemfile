@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.1.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '0.3.18'
 # Use SCSS for stylesheets
@@ -52,3 +52,8 @@ gem 'devise'
 gem 'paperclip'
 gem 'kaminari'
 gem 'bootstrap-sass'
+gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'activeadmin-translate'
+gem 'devise-i18n'
+gem 'cancancan'
+gem 'rails_admin'

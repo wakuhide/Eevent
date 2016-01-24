@@ -8,16 +8,16 @@ class User < ActiveRecord::Base
 
   has_many :event_users
   has_many :events, through: :event_users
+  has_and_belongs_to_many :roles
 
-    def name
-    "#{family_name} #{first_name}"
+    def has_role?(name)
+      self.roles.where(name: name).length > 0
     end
-
-    def name_kana
-    "#{family_name_kana} #{first_name_kana}"
+    def name
+    "#{fullname}"
     end
 
     def full_profile?
-      avatar? && family_name? && first_name? && family_name_kana? && first_name_kana?
+      fullname? && gender? && birth_date? && addresss && job && marital && TEL
     end
 end

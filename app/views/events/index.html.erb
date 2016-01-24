@@ -1,34 +1,38 @@
 <h2>次のイベント</h2>
-  <h3><%= @event.title %></h3>
-  <p>
-    <%= @event.date %>
+  <h3><%= @event.title %></h3><br />
+  <p class="event3">
+    <%= @event.date.strftime("%x %X") %>
   </p>
-  <p>
+  <p class="event3">
     <%= @event.member %>/16名 あと<%= @event.rest_member %>名！
-  </p>
-  <p>
+  </p><br />
+  <p class="participate">
   <%= link_to "イベント詳細", event_path(@event) %>
-  <%= link_to "参加" %>
-  <p>
-  <%= image_tag "gaikan.png", class: "bar" %>
+  <% if user_signed_in? %>
+  <%= link_to "参加", new_event_user_path(id: @event.id), :confirm => '本当に参加しますか？', method: :post %>
+  <% end %>
+
+  </p>
+  <%= image_tag "party.png", class: "bar" %>
+  <p>※この画像はイメージです。</p>
 <p class="title">中央区晴海。</p>
-<p>
+  <p class="sentence">
 東京を代表する「銀座」約2.2km圏に位置する都心の臨海部。世界に開けた海を抱く立地である。<br />
   今、この都心と湾岸がクロスするハイブリッドなポテンシャルを秘めたアドレスに、大人たちの心を解放するような日常を創造する。<br />
-</p>
-<%= image_tag "bar.png", class: "bar" %> <br />
+  </p>
+<%= image_tag "bar.png", class: "bar" %> <br /><br />
 <p class="title">
   煌めく東京を見晴らす、天空のVIEW LOUNGE & BAR。</p>
-  <p>
+  <p class="sentence">
   都心、そしてレインボーブリッジを望む、WEST棟43階のVIEW LOUNGE&BAR。<br />
   中央に設えたシャンデリアを中心に、バーカウンターや2つのラウンジコーナーを設けている。<br />
   光り輝くダイナミックな東京を借景にグラスを傾け語らう、ラウンジのソファに身を沈め賓客をもてなす。<br />
   タワーレジデンスならではのプレミアムなひとときがここにはある。
   </p>
-<%= image_tag "spa.png", class: "bar" %>
+<%= image_tag "spa.png", class: "bar" %><br /><br />
 <p class="title">
   穏やかな世界へ誘う、豊かな水を湛えるSPA。
-  <p>
+  <p class="sentence">
   身体を解きほぐし、
   満ち足りた幸福感で包み込むSPAをご用意。<br />
   DRY&SPAとSTEAM&SPAの2つのSPAには
@@ -38,12 +42,22 @@
   心地よいリラクゼーションを
   もたらしてくれるだろう。
   </p>
-<%= image_tag "スーパー.png", class: "bar" %>
+<%= image_tag "スーパー.png", class: "bar" %><br /><br />
 <p class="title">
   建物の1階に24時間営業のスーパー「マルエツ」
-  <p>
-  限りある時間を有効に活用してもらいたい。「DEUX TOURS」の1階には、多彩な品揃えが魅力の「マルエツ（仮称）晴海三丁目店」。敷地から出ることなくいつでも気軽に、利用することができる。
-  </p><br /><br />
+  <p class="sentence">
+  限りある時間を有効に活用してもらいたい。1階には、多彩な品揃えが魅力のマルエツ。敷地から出ることなくいつでも気軽に、利用することができる。
+  </p>
+  <%= image_tag "owner's suites.png", class: "bar" %><br /><br />
+<p class="title">
+  “おもてなし”のひとときを。
+  <p class="sentence">
+  別世界の居心地を多くの方々に享受していただきたい。
+  その想いから“和”“シティ”“リゾート”、それぞれに趣向を凝らした3つのオーナーズスイートを設えた。
+  友人やご家族をお迎えした際には、贅沢な社交スペースとしても活用することができる。
+  </p>
+
+  <br /><br />
 <p class="title2">
   イベント履歴
 </p>
@@ -51,6 +65,3 @@
   <%= render partial: "common/event", collection: @events %>
   <%= paginate(@events) %><br /><br />
 </ul><br /><br />
-<p class="title2">
-  申し込み
-</p>

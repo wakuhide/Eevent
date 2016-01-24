@@ -1,14 +1,14 @@
 .icatch {
   width: 800px;
-  height: 330px;
+  height: 380px;
 }
 
 .bar {
-  width: 400px;
+  width: 500px;
 }
 
 .title {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
 }
 
@@ -40,4 +40,21 @@
     position: relative;
     width: 100%;
     text-align: center;
+}
+
+.participate {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.event3 {
+  font-size: 1.4em;
+}
+
+.birth_date_field {
+  font-size: 1.4em;
+}
+
+.attension {
+  font-size: 0.8em;
 }

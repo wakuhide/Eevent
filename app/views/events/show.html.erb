@@ -1,14 +1,16 @@
-  <h3><%= @event.title %></h3>
-  <p>
+<h2>次のイベント</h2>
+  <h3><%= @event.title %></h3><br />
+  <p class="event3">
     <%= @event.date %>
   </p>
-  <p>
+  <p class="event3">
     <%= @event.member %>/16名 あと<%= @event.rest_member %>名！
-  </p>
-  <p>
-  <%= link_to "イベント詳細" %>
-  <%= link_to "申し込み" %>
-  <p>
+  </p><br />
+  <p class="participate">
+  <%= link_to "イベント詳細", event_path(@event) %>
+  <% if user_signed_in? %>
+  <%= link_to "参加", new_event_user_path(id: @event.id), method: :post %>
+  <% end %><br /><br />
 <%= image_tag "飲み会.png", class: "shousai" %>
 
   <h2>イベント詳細</h2>
