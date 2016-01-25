@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :avatar, content_type: ["image/jpg","image/jpeg","image/png"]
 
+  validates_presence_of :fullname, :sex, :addresss, :job, :marital, :TEL
+
   has_many :event_users
   has_many :events, through: :event_users
   has_and_belongs_to_many :roles
@@ -18,6 +20,6 @@ class User < ActiveRecord::Base
     end
 
     def full_profile?
-      fullname? && gender? && birth_date? && addresss && job && marital && TEL
+      fullname? && sex? && birth_date? && addresss? && job? && marital? && TEL?
     end
 end

@@ -30,10 +30,14 @@ class UsersController < ApplicationController
 
   private
   def update_params
-    params.require(:user).permit(:fullname, :avatar, :gender, :adresss, :job, :marital, :TEL)
+    params.require(:user).permit(:fullname, :avatar, :sex, :addresss, :job, :marital, :TEL, :birth_date)
+  end
+
+  def birth_date_params
+    # params.require(:user).permit(:birth_date(1i), :birth_date(2i), :birth_date(3i))
   end
 
   def create_params
-    params.require(:user).permit(:fullname, :avatar, :gender, :adresss, :job, :marital, :TEL)
+    params.require(:user).permit(:fullname, :avatar, :sex, :addresss, :job, :marital, :TEL)
   end
 end
