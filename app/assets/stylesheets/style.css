@@ -1,10 +1,9 @@
 .icatch {
-  width: 800px;
-  height: 380px;
+  width: 100%;
 }
 
 .bar {
-  width: 500px;
+  width: 100%;
 }
 
 .title {
@@ -19,7 +18,7 @@
 }
 
 .section {
-  width: 150px;
+  width: 100%;
 }
 
 .title2 {
@@ -28,18 +27,29 @@
 }
 
 .image {
-  height: 300px;
+  height: 100%;
   background-repeat: no-repeat;
 }
 
 .shousai {
-  width: 550px;
+  width: 100%;
 }
 
 .navbar-nav {
-    position: relative;
+    display: table;
+    table-layout: fixed;
     width: 100%;
-    text-align: center;
+}
+.navbar-nav > li {
+    display: table-cell;
+    width: 20%;
+}
+
+@media (max-width: 768px){
+.navbar-nav > li {
+    display: block;
+    width: 100%;
+}
 }
 
 .participate {
@@ -57,4 +67,19 @@
 
 .attension {
   font-size: 0.8em;
+}
+
+.TEL {
+  float: right;
+  margin-top:10px;
+  margin-right:10px;
+}
+
+.margin {
+  margin-left:10px;
+  width: 100%;
+}
+
+.active2 {
+  width: 500px;
 }

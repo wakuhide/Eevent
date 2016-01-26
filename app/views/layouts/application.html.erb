@@ -13,7 +13,7 @@
 <title>Eevents</title>
 </head>
 <body>
-
+<div class="col-xs-12">
 <div id="top">
   <%= render partial: 'common/header' %>
   <%= render partial: 'common/nav' %>
@@ -39,6 +39,9 @@
 
 
     <% end %>
+  <div class="row">
+  <div class="col-xs-8">
+
     <div id="main">
       <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
@@ -48,7 +51,11 @@
       <% end %>
       <%= yield %>
     </div>
+  </div>
+  <div class="col-xs-4">
     <%= render partial: 'common/sidebar' %>
+  </div>
+  </div>
   </div>
 
   <div id="footer">

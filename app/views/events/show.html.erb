@@ -1,7 +1,7 @@
 <h2>次のイベント</h2>
   <h3><%= @event.title %></h3><br />
   <p class="event3">
-    <%= @event.date %>
+    <%= @event.date.strftime("%Y年 %m月 %d日, %H:%M") %>
   </p>
   <p class="event3">
     <%= @event.member %>/16名 あと<%= @event.rest_member %>名！
@@ -24,7 +24,7 @@
     <p>
     この会は同じ職業の人が仕事の意見交換や相談をするために主催しています。<br />
     特にSEの方は社内での会話がなかなかできないと聞くので、主催することにしました。
-    </p><br />
+    </p><br /><br />
   <h2>イベントの流れ</h2>
     <p>
       1.お申し込み<br />
@@ -33,14 +33,14 @@
       4.自己紹介<br />
       5.フリートーク席替え<br />
       6.閉会連絡先交換<br />
-    </p>
+    </p><br /><br />
   <h2>過去のこのイベントの動画や日記
   </h2>
   <li><%= link_to "1" %></li>
   <li><%= link_to "2" %></li>
   <li><%= link_to "3" %></li>
   <li><%= link_to "4" %></li>
-  <li><%= link_to "5" %></li>
+  <li><%= link_to "5" %></li><br /><br />
   <h2>
   Eeventのイベントに参加された人
   </h2>

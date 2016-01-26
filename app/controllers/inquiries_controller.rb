@@ -5,15 +5,15 @@ class InquiriesController < ApplicationController
   end
 
   def create
-    Inquiry.create(inquiry_params)
+    @inquiry = Inquiry.create(inquiry_params)
+    InquiryMailer.received_email(@inquiry).deliver
+    InquiryMailer.thanks_email(@inquiry).deliver
+
   end
 
   def thanks
-
     @inquiry = Inquiry.new(params[:inquiry])
     InquiryMailer.received_email(@inquiry).deliver
-    binding.pry
-
     render :action => 'thanks_email'
   end
 
@@ -24,5 +24,4 @@ class InquiriesController < ApplicationController
   def inquiry_params
     params.require(:inquiry).permit(:name, :email, :message)
   end
-
 end
