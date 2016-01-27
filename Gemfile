@@ -58,3 +58,7 @@ gem 'devise-i18n'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'twitter-bootstrap-rails'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
