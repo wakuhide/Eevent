@@ -1,5 +1,4 @@
-class AdminController < ApplicationController
-  class AdminController < AuthorizedController
+class AdminController < AuthorizedController
 
   def show
 
@@ -7,5 +6,4 @@ class AdminController < ApplicationController
 
   end
 
-end
 end
