@@ -1,4 +1,4 @@
-class AdminController < AuthorizedController
+class AdminController
 
   def show
 
