@@ -1,9 +1,9 @@
-class AdminController < AuthorizedController
+# class AdminController < AuthorizedController
 
-  def show
+#   def show
 
-    @articles = current_user.articles
+#     @articles = current_user.articles
 
-  end
+#   end
 
-end
+# end
