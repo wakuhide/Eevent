@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160124105346) do
+ActiveRecord::Schema.define(version: 20160129071115) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(version: 20160124105346) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "date"
     t.integer  "member"
     t.integer  "rest_member"
     t.integer  "num"
     t.string   "user"
+    t.datetime "date"
   end
 
   create_table "inquiries", force: true do |t|
@@ -110,11 +110,6 @@ ActiveRecord::Schema.define(version: 20160124105346) do
     t.integer "role_id", null: false
   end
 
-  create_table "tests", force: true do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                             default: "", null: false
     t.string   "encrypted_password",                default: "", null: false
@@ -126,6 +121,10 @@ ActiveRecord::Schema.define(version: 20160124105346) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.string   "family_name"
@@ -136,18 +135,11 @@ ActiveRecord::Schema.define(version: 20160124105346) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "job"
-    t.string   "fullname"
-    t.integer  "gender"
-    t.text     "message"
-    t.integer  "age"
-    t.string   "event"
-    t.time     "event_time"
     t.integer  "sex"
     t.text     "addresss"
     t.date     "birth_date"
     t.integer  "height"
-    t.string   "marital"
+    t.string   "marital",                limit: 11
     t.string   "TEL",                    limit: 11
   end
 
