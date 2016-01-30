@@ -19,7 +19,8 @@ Rails.application.configure do
   # For large-scale production use, consider using a caching reverse proxy like
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
-
+  config.action_mailer.default_url_options = { :host => 'your_app.herokuapp.com' }
+  # Disable delivery errors, bad email addresses will be ignored
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
@@ -78,6 +79,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.serve_static_assets = true
+  config.action_mailer.default_url_options = { :host => 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :domain => "smtp.gmail.com",
+    :user_name => 'ads21.hideya@gmail.com',
+    :password => 'justin238'
+  }
 end
 
 
