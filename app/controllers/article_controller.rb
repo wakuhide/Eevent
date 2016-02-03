@@ -1,4 +1,5 @@
 class ArticleController < ApplicationController
-  def concept
+  def show
+    @nav = Article.find(params[:id])
   end
 end

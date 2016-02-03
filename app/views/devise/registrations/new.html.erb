@@ -6,6 +6,9 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+    <p class="attension">
+      ※プロフィールには記載されません。<br />
+    </p>
   </div>
 
   <div class="field">
@@ -26,12 +29,23 @@
     <%= form_for :user do |f| %>
     <h2>登録情報</h2>
       <div class="form-group">
-        <div class="col-lg-6">
-          <%= f.text_field :fullname, placeholder: "名前", class: "form-control" %>
-          <label><%= f.radio_button :sex, "1" %>男</label>
-          <label><%= f.radio_button :sex, "2" %>女</label>
-          <div class="birth_date_field">
-          <%= f.label :birth_date %>
+      <div class="row form">
+        <div class="col-lg-8">
+          <p class="attension">任意項目以外はすべて必須入力となります。</p>
+          <%= f.label :名前 %><br />
+          姓<%= f.text_field :family_name, placeholder: "", class: "w50" %><br />
+          名<%= f.text_field :first_name, placeholder: "", class: "w50" %>
+          <p class="attension">
+            (例：山田 太郎）※全角<br />
+            ※リストには姓のみ記載されます。名は非公開です。（例：山田様)<br /></p>
+          <%= f.label :ふりがな %><br />
+          せい<%= f.text_field :family_name_kana, placeholder: "", class: "w50" %><br />
+          めい<%= f.text_field :first_name_kana, placeholder: "", class: "w50" %><br />
+          <p class="attension">（例：やまだ たろう）※全角</p>
+          <%= f.label :性別 %><br />
+          <%= f.radio_button :sex, :male, label: "男", inline: true %>男
+          <%= f.radio_button :sex, :female, label: "女", inline:true %>女<br /><br />
+          <%= f.label :生年月日 %><br />
           <%= raw sprintf(
               f.date_select(
                   :birth_date,
@@ -41,16 +55,21 @@
                   default:           Date.new(1989, 1, 1),
                   date_separator:    '%s'),
               '年 ', '月 ') + '日' %>
-          </div>
-          <%= f.text_field :addresss, placeholder: "住所", class: "form-control" %>
+          <p class="attension">※当日受付にて年齢の確認を行います。</p>
+          <%= f.label :住所 %><br />
+          <%= f.text_field :addresss, placeholder: "", class: "form-control" %>
           <p class="attension">※市区町村はプロフィールに記載されます。<br />
           番地やアパート名などは入力しないでください。<br />
           入力例）横浜市<br /></p>
-          <%= f.text_field :job, placeholder: "職業", class: "form-control" %>
-          <label><%= f.radio_button :marital, "1" %>未婚</label>
-          <label><%= f.radio_button :marital, "2" %>既婚</label>
-          <%= f.text_field :TEL, placeholder: "携帯番号", class: "form-control" %>
+          <%= f.label :職業 %><br />
+          <%= f.text_field :job, placeholder: "", class: "form-control" %><br />
+          <%= f.label :婚姻歴 %><br />
+          <%= f.radio_button :marital, :single, label: "未婚", inline: true %>未婚
+          <%= f.radio_button :marital, :married, label: "既婚", inline:true %>既婚<br /><br />
+          <%= f.label :携帯番号 %><br />
+          <%= f.text_field :TEL, placeholder: "", class: "form-control" %>
           <p class="attension">※ハイフンなし、半角数字<br />会場変更や開催中止などの緊急時に連絡致します。</p>
+        </div>
         </div>
       </div>
       <div class="form-group">
