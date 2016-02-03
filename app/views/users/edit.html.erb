@@ -31,7 +31,7 @@
               '年 ', '月 ') + '日' %>
           <p class="attension">※当日受付にて年齢の確認を行います。</p>
           <%= f.label :住所 %><br />
-          <%= f.text_field :addresss, placeholder: "", class: "form-control" %>
+          市区町村(任意)<%= f.text_field :city, placeholder: "", class: "form-control" %>
           <p class="attension">※市区町村はプロフィールに記載されます。<br />
           番地やアパート名などは入力しないでください。<br />
           入力例）横浜市<br /></p>
