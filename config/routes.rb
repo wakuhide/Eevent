@@ -8,14 +8,12 @@ Rails.application.routes.draw do
       post 'send_mail'
     end
   end
-  resources :questionnaires
   get 'concept' => "article#concept"
   get 'report' => "article#report"
   get 'reason' => "article#reason"
   get 'question' => "article#question"
   root 'events#index'
   devise_for :users
-  resources :notes
   resources :event_users
   resources :users, only: [:show, :update, :edit]
   resources :inquiries do
@@ -25,5 +23,4 @@ Rails.application.routes.draw do
       post "thanks_email"
     end
   end
-
 end
