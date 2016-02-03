@@ -8,9 +8,12 @@ Rails.application.routes.draw do
       post 'send_mail'
     end
   end
-  resources :articles
   root 'events#index'
   devise_for :users
+  resource :concepts, only: :show
+  resource :questions, only: :show
+  resource :reasons, only: :show
+  resource :reports, only: :show
   resources :event_users
   resources :users, only: [:show, :update, :edit]
   resources :inquiries do
