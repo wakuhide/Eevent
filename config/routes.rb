@@ -8,10 +8,7 @@ Rails.application.routes.draw do
       post 'send_mail'
     end
   end
-  get 'concept' => "article#concept"
-  get 'report' => "article#report"
-  get 'reason' => "article#reason"
-  get 'question' => "article#question"
+  resources :articles
   root 'events#index'
   devise_for :users
   resources :event_users

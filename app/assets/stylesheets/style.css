@@ -83,3 +83,11 @@
 .active2 {
   width: 500px;
 }
+
+.btn_submit {
+  text-align: center;
+}
+
+.w50 {
+  width: 30%;
+}
