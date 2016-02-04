@@ -57,6 +57,7 @@
               '年 ', '月 ') + '日' %>
           <p class="attension">※当日受付にて年齢の確認を行います。</p>
           <%= f.label :住所 %><br />
+          都道府県<%= f.collection_select :prefecture_id, Prefecture.all, :id, :name,:selected => 21 %><br />
           市区町村(任意)<%= f.text_field :city, placeholder: "", class: "form-control" %>
           <p class="attension">※市区町村はプロフィールに記載されます。<br />
           番地やアパート名などは入力しないでください。<br />
