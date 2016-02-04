@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :Rememberable
 
   enum sex: { male: 0, female: 1 }
   enum marital: { single: 0, married: 1 }
