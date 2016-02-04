@@ -9,6 +9,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def detail
+    @event = Event.find(params[:event_id])
+  end
+
   def search
   end
 

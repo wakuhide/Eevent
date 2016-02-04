@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     end
 
     def name
-    "#{family_name}"
+    "#{family_name + first_name}"
     end
 
     def full_profile?
