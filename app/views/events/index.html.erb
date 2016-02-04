@@ -8,7 +8,7 @@
     <%= @event.member %>/16名 あと<%= @event.rest_member %>名！
   </p><br />
   <p class="participate">
-  <%= link_to "イベント詳細", event_path(@event) %>
+  <%= link_to "イベント詳細", event_detail_path(@event), method: :post %>
   <% if user_signed_in? %>
   <%= link_to "参加", new_event_user_path(event_id: @event.id), method: :get , data: {confirm: "#{@event.title}に参加します、よろしいですか？"}%>
   <% end %>
