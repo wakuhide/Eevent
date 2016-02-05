@@ -10,7 +10,7 @@
   <p class="participate">
   <%= link_to "イベント詳細", event_detail_path(@event), method: :post %>
   <% if user_signed_in? %>
-  <%= link_to "参加", attend_event_path(event_id: @event.id), method: :get , data: {confirm: "#{@event.title}に参加します、よろしいですか？"}%>
+  <%= link_to "参加", attend_event_path(attend_id: @event.id), method: :post , data: {confirm: "#{@event.title}に参加します、よろしいですか？"}%>
   <% end %>
 
   </p>
