@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resource :questions, only: :show
   resource :reasons, only: :show
   resource :reports, only: :show
-  resources :event_users
+  resources :event_users, only: :new
   resources :users, only: [:show, :update, :edit] do
     post 'mypage'
   end
@@ -21,5 +21,8 @@ Rails.application.routes.draw do
       post "received_email"
       post "thanks_email"
     end
+  end
+  resources :attends, only: :event do
+    post 'event'
   end
 end

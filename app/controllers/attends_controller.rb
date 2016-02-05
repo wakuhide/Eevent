@@ -1,5 +1,4 @@
-class EventUsersController < ApplicationController
-
+class AttendsController < ApplicationController
   def new
     EventUser.create(event_params)
     SendMailToAdmin.hello(current_user.name).deliver
