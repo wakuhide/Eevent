@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resource :reasons, only: :show
   resource :reports, only: :show
   resources :event_users
-  resources :users, only: [:show, :update, :edit]
+  resources :users, only: [:show, :update, :edit] do
+    post 'mypage'
+  end
   resources :inquiries do
     collection do
       post "thanks"
