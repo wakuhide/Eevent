@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  resources :events  do
+  resources :events, only: :index  do
     post 'detail'
     collection do
-      get 'search'
       post 'send_mail'
     end
   end
@@ -19,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update, :edit] do
     post 'mypage'
   end
-  resources :inquiries do
+  resources :inquiries, only: [:create, :index] do
     collection do
       post "thanks"
       post "received_email"
