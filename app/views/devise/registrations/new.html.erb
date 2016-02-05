@@ -1,4 +1,9 @@
 <h2>新規会員登録</h2>
+<div class="right">
+<%- if controller_name != 'sessions' %>
+  すでに登録済みの方は<%= link_to "ログイン", new_session_path(resource_name) %><br />
+<% end -%>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -80,5 +85,3 @@
   </div>
 </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
