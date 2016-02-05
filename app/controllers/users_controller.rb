@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def mypage
+    @user = User.find(params[:user_id])
+  end
+
   def edit
   end
 
