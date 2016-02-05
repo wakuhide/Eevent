@@ -7,6 +7,6 @@ class AttendsController < ApplicationController
 
   private
   def event_params
-    params.permit(:event_id).merge(user_id: current_user.id)
+    params.permit(:attend_id).merge(user_id: current_user.id)
   end
 end
