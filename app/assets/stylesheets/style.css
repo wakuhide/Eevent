@@ -88,10 +88,22 @@
   text-align: center;
 }
 
-.w50 {
-  width: 30%;
-}
-
 .center {
   text-align: center;
+}
+
+#footer {
+  background-color: black;
+}
+
+.copyright {
+  color: white;
+}
+
+#pageTop a {
+  color: white;
+}
+
+.right {
+  text-align: right;
 }
