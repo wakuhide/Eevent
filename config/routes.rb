@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   resources :attends, only: :event do
     post 'event'
   end
-  resources :posts, only: [:index, :new]
+  resources :posts, only: [:index, :new, :create]
 end
