@@ -1,11 +1,12 @@
 <div class="margin">
+  <%= link_to "イベント投稿画面", new_post_path %>
 <h2>次のイベント</h2>
   <h3><%= @event.title %></h3><br />
   <p class="event3">
     <%= @event.date.strftime("%Y年 %m月 %d日, %H:%M") %>
   </p>
   <p class="event3">
-    <%= @event.member %>/16名 あと<%= @event.rest_member %>名！
+    <%= @event.member %>/<%= @event.num %>名 あと<%= @event.rest_member %>名！
   </p><br />
   <p class="participate">
   <%= link_to "イベント詳細", event_detail_path(@event), method: :post %>
