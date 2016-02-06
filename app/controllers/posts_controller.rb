@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    hash = params.permit(:title)
-    hash.merge(user_id: current_user.id)
+    hash = params.permit(:title, :detail, :num, :date)
+    hash.merge(user_id: current_user.id, )
   end
 end
