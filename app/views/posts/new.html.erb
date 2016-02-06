@@ -1,11 +1,27 @@
 <div class="margin">
   <div class="contents row">
-    <%= form_tag('/posts', method: :post) do %>
+    <%= form_for :post do |f| %>
       <h3>
         新規イベント投稿
       </h3><br />
+      <%= f.label :タイトル %><br />
+        <%= f.text_field :title, placeholder: "" %><br /><br />
+      <%= f.label :コンセプト %><br />
+        <%= f.text_field :detail, placeholder: "" %><br /><br />
+        <%= f.label :開催日時 %><br />
+        <%= raw sprintf(
+          f.date_select(
+              :date,
+              use_month_numbers: true,
+              start_year:        2016,
+              end_year:          (Time.now.year - 18),
+              default:           Date.new(2016, 1, 1),
+              date_separator:    '%s'),
+              '年 ', '月 ') + '日' %><br /><br />
+        <%= f.label :参加人数 %><br />
+      <%= f.collection_select :num, Number.all, :id, :name,:selected => 6 %><br /><br />
       <textarea cols="30" name="text" placeholder="text" rows="30"></textarea><br /><br />
-      <%= link_to "イベント投稿",  '/posts', method: :post , data: {confirm: "よろしいですか？"}%>
+      <strong><%= link_to "イベント投稿", '/posts', method: :post , data: {confirm: "よろしいですか？"}%></strong><br /><br /><br />
     <% end %>
   </div>
 </div>

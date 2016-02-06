@@ -36,14 +36,14 @@
         <div class="col-lg-8">
           <p class="attension">任意項目以外はすべて必須入力となります。</p>
           <%= f.label :名前 %><br />
-          姓<%= f.text_field :family_name, placeholder: "", class: "w50" %><br />
-          名<%= f.text_field :first_name, placeholder: "", class: "w50" %>
+          姓<%= f.text_field :family_name, placeholder: "" %><br />
+          名<%= f.text_field :first_name, placeholder: "" %>
           <p class="attension">
             (例：山田 太郎）※全角<br />
             ※リストには姓のみ記載されます。名は非公開です。（例：山田様)<br /></p>
           <%= f.label :ふりがな %><br />
-          せい<%= f.text_field :family_name_kana, placeholder: "", class: "w50" %><br />
-          めい<%= f.text_field :first_name_kana, placeholder: "", class: "w50" %><br />
+          せい<%= f.text_field :family_name_kana, placeholder: "" %><br />
+          めい<%= f.text_field :first_name_kana, placeholder: "" %><br />
           <p class="attension">（例：やまだ たろう）※全角</p>
           <%= f.label :性別 %><br />
           <%= f.radio_button :sex, :male, label: "男", inline: true %>男

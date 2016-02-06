@@ -8,6 +8,30 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 AdminUser.create!(email: 'ads21.hideya@gmail.com', password: 'davis963', password_confirmation: 'davis963')
 
+numbers = %w(
+何名参加？
+4名
+5名
+6名
+7名
+8名
+9名
+10名
+11名
+12名
+13名
+14名
+15名
+16名
+17名
+18名
+19名
+20名
+)
+numbers.each do |number|
+  Number.find_or_create_by(name: number)
+end
+
 prefectures = %w(
 北海道
 青森県
@@ -60,3 +84,4 @@ prefectures = %w(
 prefectures.each do |prefecture|
   Prefecture.find_or_create_by(name: prefecture)
 end
+
