@@ -20,7 +20,6 @@
               '年 ', '月 ') + '日' %><br /><br />
         <%= f.label :参加人数 %><br />
       <%= f.collection_select :num, Number.all, :id, :name,:selected => 6 %><br /><br />
-      <textarea cols="30" name="text" placeholder="text" rows="30"></textarea><br /><br />
       <strong><%= link_to "イベント投稿", '/posts', method: :post , data: {confirm: "よろしいですか？"}%></strong><br /><br /><br />
     <% end %>
   </div>
