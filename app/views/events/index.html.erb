@@ -1,7 +1,4 @@
 <div class="margin">
-  <% if user_signed_in? && (current_user.status == 2 || current_user.status == 3) %>
-  <%= link_to "イベント投稿画面", new_post_path %>
-  <% end %>
 <h2>次のイベント</h2>
   <h3><%= @event.title %></h3><br />
   <p class="event3">

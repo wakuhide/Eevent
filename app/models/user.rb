@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 
   enum sex: { male: 0, female: 1 }
   enum marital: { single: 0, married: 1 }
-  # ステータス: pre_active (仮登録非参加者), active (本登録参加者),admin(同志),super_admin(管理者), deleted (削除済み).
-  enum status: { pre_active: 0,active: 1, admin: 2, super_admin: 3, deleted: 9 }
+  # ステータス: pre_active (仮登録非参加者), active (本登録参加者),vip(同志),admin(管理者), deleted (削除済み).
+  enum status: { pre_active: 0,active: 1, vip: 2, admin: 3, deleted: 9 }
 
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>"}
